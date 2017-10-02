@@ -652,5 +652,19 @@ open class Canvas : CustomPlaygroundQuickLookable {
         
     }
     
+    open func drawAxes() {
+        
+        // Draw horizontal axis
+        self.drawLine(fromX: self.width * -10, fromY: 0, toX: self.width * 10, toY: 0, lineWidth: 1, capStyle: NSBezierPath.LineCapStyle.squareLineCapStyle)
+        
+        // Draw vertical axis
+        self.drawLine(fromX: 0, fromY: self.height * -10, toX: 0, toY: self.height * 10, lineWidth: 1, capStyle: NSBezierPath.LineCapStyle.squareLineCapStyle)
+        
+        // Draw labels
+        self.drawText(message: "x", size: 12, x: 50, y: 5)
+        self.drawText(message: "y", size: 12, x: 5, y: 50)
+        
+    }
+    
 }
 

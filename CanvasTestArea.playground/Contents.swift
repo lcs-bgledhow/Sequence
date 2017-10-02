@@ -22,33 +22,42 @@ import PlaygroundSupport
 
 // Create canvas
 let canvas = Canvas(width: 500, height: 500)
+canvas.translate(byX: 300, byY: 0)
+canvas.drawAxes()
+canvas.translate(byX: -300, byY: 0)
+canvas.drawAxes()
+canvas.fillColor = Color.black
+canvas.rotate(by: 25)
+canvas.translate(byX: 300, byY: -150)
+canvas.drawEllipse(centreX: 100, centreY: 200, width: 65, height:90, borderWidth: 3)
 
-// Create left ear
-canvas.rotate(by: 45)
+// This part is the black nose circle
+canvas.translate(byX: -50, byY: 60)
+canvas.rotate(by: -25)
+canvas.drawEllipse(centreX: 3, centreY: 150, width: 30, height: 20)
 
-// Show the axes
-canvas.drawLine(fromX: -100, fromY: 0, toX: 100, toY: 0) // x-axis
-canvas.drawLine(fromX: 0, fromY: -100, toX: 0, toY: 100) // y-axis
+canvas.translate(byX: -100, byY: 190)
+canvas.drawAxes()
+canvas.fillColor = Color.black
+canvas.rotate(by: -25)
 
+// This part is the eyes that is white
+canvas.drawEllipse(centreX: 35, centreY: 15, width: 65, height:90, borderWidth: 3)
+canvas.rotate(by: 25)
+canvas.fillColor = Color.white
+canvas.drawEllipse(centreX: 65, centreY: 20, width: 10, height: 10)
+canvas.rotate(by: 0)
+canvas.drawEllipse(centreX: 150, centreY: 20, width: 10, height: 10)
 
-canvas.translate(byX: 300, byY: -100)
+//Ears
+canvas.fillColor = Color.black
+canvas.rotate(by:-50)
+canvas.translate(byX: -70, byY: 70)
+canvas.drawEllipse(centreX: 0, centreY: 0, width: 65, height:90, borderWidth: 3)
 
+canvas.
 
-canvas.drawEllipse(centreX: 200, centreY: 30, width: 70, height: 130, borderWidth: 50)
-canvas.rotate(by: -85)
-canvas.drawEllipse(centreX: -190, centreY: 50, width: 70, height: 130, borderWidth: 50)
-
-// Create right ear
-canvas.rotate(by: 40)
-canvas.drawEllipse(centreX: 200, centreY:100, width: 50, height: 100, borderWidth: 1)
-
-canvas.translate(byX: 50, byY: 50)
-
-
-
-
-// This code is necessary to see the result in the Assistant Editor at right
+// Show the result in the Assistant Editor
 PlaygroundPage.current.liveView = canvas.imageView
-
 
 
